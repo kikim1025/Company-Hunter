@@ -1,0 +1,35 @@
+{
+  "name": "company-hunter",
+  "version": "1.0.0",
+  "description": "MERN stack. Coding Challange.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kikim1025/Company-Hunter.git"
+  },
+  "keywords": [
+    "MongoDB",
+    "Express.js",
+    "React.js",
+    "Node.js",
+    "Redux",
+    "SASS",
+    "CSS3",
+    "HTML5",
+    "RESTful",
+    "API"
+  ],
+  "author": "Ki Beom Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kikim1025/Company-Hunter/issues"
+  },
+  "homepage": "https://github.com/kikim1025/Company-Hunter#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.6.2"
+  }
+}

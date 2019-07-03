@@ -1,2 +1,2 @@
 # Company-Hunter
-MERN. Coding Challange.
+MERN. Written for a Coding Challenge.
