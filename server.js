@@ -13,6 +13,11 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, './client/public')));
 };
 
+// Fixing deprecation warnings
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+
+// Routes
 require('./routes/apiRoutes')(app);
 //require('./routes/htmlRoutes')(app);
 
