@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from './Header';
-import CompanyBoxContainer from '../container/CompanyBoxContainer';
+import MainContainer from '../container/MainContainer';
 
 const Page = () => (
-    <div className='page'>
+    <div id='page'>
         <Header />
-        <CompanyBoxContainer />
+        <MainContainer />
     </div>
 );
 

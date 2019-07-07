@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import CompanyBox from '../presentational/CompanyBox';
+import Main from '../presentational/Main';
 import { getData } from '../../redux/actions';
 
 const mapStateToProps = (state) => {
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps) (CompanyBox);
+export default connect(mapStateToProps, mapDispatchToProps) (Main);
