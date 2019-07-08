@@ -1,4 +1,4 @@
-import { GET_DATA, FAIL_DUP, FAIL_GONE, FAIL, TOGGLE_MODAL, TOGGLE_MODAL_INPUT } from '../constants/constants';
+import { GET_DATA, FAIL_DUP, FAIL_GONE, FAIL, TOGGLE_MODAL, ALERT_MODAL } from '../constants/constants';
 
 const initState = {
     modal: false
@@ -14,20 +14,24 @@ function reducer(state = initState, action) {
                 name: '',
                 performance: 0,
                 desc: '',
-                contacts: []
+                contacts: [],
+                alert: ''
             });
         case FAIL_DUP:
             return Object.assign({}, state, { 
                 data: action.payload,
-                alert: 'Company data with same name was already created by another user.'
+                modal: false,
+                alert: 'Company data with same name was already created by another user. Data refreshed.'
             });
         case FAIL_GONE:
             return Object.assign({}, state, { 
                 data: action.payload,
-                alert: 'The company data was deleted by another user.'
+                modal: false,
+                alert: 'The company data was deleted by another user. Data refreshed.'
             });
         case FAIL:
             return Object.assign({}, state, { 
+                modal: false,
                 alert: 'Unkown Server ERROR'
             });
         case TOGGLE_MODAL:
@@ -38,7 +42,13 @@ function reducer(state = initState, action) {
                 status: action.status,
                 performance: action.performance,
                 desc: action.desc,
-                contacts: action.contacts
+                contacts: action.contacts,
+                alert: ''
+            });
+        case ALERT_MODAL:
+            return Object.assign({}, state, { 
+                modal: false,
+                alert: action.alert
             });
         default: 
             return state;

@@ -10,15 +10,13 @@ const isString = function() {
 // See if all Strings in array match email regex.
 // Additionally check if all emails are unique
 const matchEmail = function(arr) {
-    let arrLen = arr.length;
-    if (arrLen < 4) {
+    if (arr.length < 4) {
         let checked = [];
-        for (let i = 0; i < arrLen; i++) {
-            let curr = arr[i];
-            if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(curr) || checked.includes(curr)) {
+        for (let i = 0; i < arr.length; i++) {
+            if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(arr[i]) || checked.includes(arr[i])) {
                 return false;
             };
-            checked.push(curr);
+            checked.push(arr[i]);
         };
         return true;
     } else {
