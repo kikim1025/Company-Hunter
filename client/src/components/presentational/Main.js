@@ -1,5 +1,5 @@
 import React from 'react';
-import ControlPanel from './ControlPanel';
+import ControlContainer from '../container/ControlContainer';
 import Company from './Company';
 
 class Main extends React.Component {
@@ -13,14 +13,15 @@ class Main extends React.Component {
     render() {
         return ( 
             <main>
-                {   !this.props.data
+                {   
+                    !this.props.data
                     ?   <div>retrieving data...</div>
-                    :   <div>
-                            <ControlPanel />
-                            <section className='company-box'>
+                    :   <div className='grid grid--main'>
+                            <ControlContainer />
+                            <section className='company-box grid grid--company'>
                                 {
                                     this.props.data.map((c, i) => (
-                                        <Company company={c} key={i} />
+                                        <Company company={c} key={i} toggleModal={this.props.toggleModal} />
                                     ))
                                 }
                             </section>

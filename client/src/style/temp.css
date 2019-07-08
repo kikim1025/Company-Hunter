@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+}
+
+#page {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.item-row {
+    margin: 5px auto 5px auto;
+    overflow: auto;
+    text-align: center;
+}
+
+.modal-box {
+    position: relative;
+}
+
+.modal-out {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 2;
+}
+.modal-out__top {
+    background-color: rgba(0, 0, 0, 0.74);
+    position: absolute;
+    height: 5vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+}
+
+.modal-out__right {
+    background-color: rgba(0, 0, 0, 0.74);
+    position: absolute;
+    height: 83vh;
+    width: 20vw;
+    top: 5vh;
+    right: 0;
+}
+
+.modal-out__bottom {
+    background-color: rgba(0, 0, 0, 0.74);
+    position: absolute;
+    height: 12vh;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+}
+
+.modal-out__left {
+    background-color: rgba(0, 0, 0, 0.74);
+    position: absolute;
+    height: 83vh;
+    width: 20vw;
+    top: 5vh;
+    left: 0;
+}
+
+.modal {
+    background-color: rgba(253, 227, 245, 0.93);
+    height: 83vh;
+    width: 60vw;
+    position: absolute;
+    top: 5vh;
+    left: 20vw;
+    z-index: 2;
+}
+
+.modal__item {
+    overflow: auto;
+    margin: 5px auto 5px auto;
+}
+
+.modal__alert {
+    
+}
+
+.modal__buttons {
+    position: relative;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
+.right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
+.bottom {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 3;
+}
+
+.grid--modal {
+    grid-template-rows: 10% 10% 10% 25% 25% 1fr;
+}
+
+
+
+.grid {
+    display: grid;
+}
+
+.grid--main {
+    grid-template-columns: 18% 70%;
+}
+
+.control-panel {
+    grid-column: 1;
+}
+
+.company-box {
+    grid-column: 2;
+}
+
+.grid--company {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 5px;
+}
+
+.company {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
+.company__name {
+    font-size: 1.5em;
+}

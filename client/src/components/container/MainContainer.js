@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Main from '../presentational/Main';
-import { getData } from '../../redux/actions';
+import { getData, toggleModal } from '../../redux/actions';
 
 const mapStateToProps = (state) => {
     return {
@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getData: () => dispatch(getData())
+        getData: () => dispatch(getData()),
+        toggleModal: (modal, name, status, performance, desc, contacts, input) => dispatch(toggleModal(modal, name, status, performance, desc, contacts, input))
     };
 };
 

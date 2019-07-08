@@ -37,14 +37,20 @@ const CompanySchema = new Schema({
     },
     status: {
         type: String,
-        enum: ['researching', 'pending', 'approved', 'declined'],
+        enum: ['Researching', 'Pending', 'Approved', 'Declined'],
         required: 'Status is required'
+    },
+    performance: {
+        type: Number,
+        required: 'Performance score is required',
+        min: 0,
+        max: 10
     },
     desc: {
         type: String,
         trim: true,
         required: isString,
-        maxlength: 2
+        maxlength: 200
     },
     contacts: {
         type: [String],
@@ -53,12 +59,6 @@ const CompanySchema = new Schema({
             validator: matchEmail,
             message: props => `${props.value} is not valid email`
         }
-    },
-    performance: {
-        type: Number,
-        required: 'Performance score is required',
-        min: 1,
-        max: 10
     }
 });
 

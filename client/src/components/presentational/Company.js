@@ -1,29 +1,24 @@
 import React from 'react';
-import Modal from './Modal';
+import Button from './Button';
 
-class Company extends React.Component {
-    state = {
-        modal: false
-    };
-
-    toggleModal = () => {
-        this.setState({ modal: !this.state.modal });
-    };
-
-    render() {
-        return (
-            <div>
-                {   this.state.modal 
-                    ?   <Modal name={this.props.company.name}
-                            toggleModal={this.toggleModal} />
-                    :   ''
+const Company = (props) => (
+    <article className='company'>
+        <div className='company__name item-row'>{props.company.name}</div>
+        <div className='company__performance item-row'>Score: {props.company.performance}/10</div>
+        <div className='company__status item-row'>Status: {props.company.status}</div>
+        <div className='company__buttons item-row'>
+            <Button name='Details' style='btn-sm btn-info'
+                onClick={() => 
+                    props.toggleModal(
+                        true, false, props.company.name, 
+                        props.company.status, props.company.performance, 
+                        props.company.desc, props.company.contacts
+                    )
                 }
-                <article className='company' onClick={() => this.toggleModal()}>
-                    { this.props.company.name }
-                </article>
-            </div>
-        );
-    };
-};
+            />
+        </div>
+    </article>
+);
+
 
 export default Company;
