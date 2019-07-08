@@ -1,4 +1,5 @@
 import React from 'react';
+import AlertContainer from '../container/AlertContainer';
 import ControlContainer from '../container/ControlContainer';
 import Company from './Company';
 
@@ -18,13 +19,16 @@ class Main extends React.Component {
                     ?   <div>retrieving data...</div>
                     :   <div className='grid grid--main'>
                             <ControlContainer />
-                            <section className='company-box grid grid--company'>
-                                {
-                                    this.props.data.map((c, i) => (
-                                        <Company company={c} key={i} toggleModal={this.props.toggleModal} />
-                                    ))
-                                }
-                            </section>
+                            <div>
+                                <AlertContainer />
+                                <section className='company-box grid grid--company'>
+                                    {
+                                        this.props.data.map((c, i) => (
+                                            <Company company={c} key={i} toggleModal={this.props.toggleModal} />
+                                        ))
+                                    }
+                                </section>
+                            </div>
                         </div>
                 }
             </main>

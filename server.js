@@ -19,7 +19,7 @@ mongoose.set('useCreateIndex', true);
 
 // Routes
 require('./routes/apiRoutes')(app);
-//require('./routes/htmlRoutes')(app);
+require('./routes/htmlRoutes')(app);
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/company-hunter_db';
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });

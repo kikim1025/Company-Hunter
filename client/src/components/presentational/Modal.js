@@ -86,7 +86,7 @@ class Modal extends React.Component {
                                             </div>
                                         </div>
                                         <div className='modal__desc item-row'>                                            
-                                            <textarea className='form-control' name='desc' maxLength='200' placeholder='Company Description' defaultValue={this.props.desc} onChange={this.getInput} />
+                                            <textarea className='modal--input__desc form-control' name='desc' maxLength='200' placeholder='Company Description' defaultValue={this.props.desc} onChange={this.getInput} />
                                         </div>
                                         <div className='modal__contacts item-row'>
                                             <span className='input-group-text'>Contacts Emails</span>    
@@ -99,7 +99,7 @@ class Modal extends React.Component {
                                         </div>
                                     </section>
                                 :   <section className='modal grid grid--modal'>
-                                        <div className='modal__name item-row'>{this.props.name}</div>
+                                        <h2 className='modal__name item-row'>{this.props.name}</h2>
                                         <div className='modal__status item-row'>{this.props.status}</div>
                                         <div className='modal__performance item-row'>{this.props.performance}/10</div>
                                         <p className='modal__desc item-row'>{this.props.desc}</p>
@@ -111,6 +111,7 @@ class Modal extends React.Component {
                                                 ))
                                             }
                                         </div>
+                                        <div className='modal__alert item-row'>Name, Status, Performance, Description are required, performance should be between 0 and 10 inclusively, and emails, if present, should be unique and in correct format.</div>
                                         <div className='modal__buttons item-row'>
                                             <div className='left'><Button name='Delete' style='btn-danger' onClick={() => this.props.deleteCompany(this.props.name)}/></div>
                                             <div className='right'><Button name='Edit' style='btn-primary'onClick={this.getUpdateScreen}/></div>

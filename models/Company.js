@@ -1,12 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// By default, required validation throws error for 0 length String
-// Enable 0 length String to work
-const isString = function() {
-    return typeof this.desc === 'string' ? '' : 'Company description is required';
-};
-
 // See if all Strings in array match email regex.
 // Additionally check if all emails are unique
 const matchEmail = function(arr) {
@@ -47,7 +41,7 @@ const CompanySchema = new Schema({
     desc: {
         type: String,
         trim: true,
-        required: isString,
+        required: 'Company description is required',
         maxlength: 200
     },
     contacts: {

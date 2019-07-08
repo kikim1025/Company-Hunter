@@ -20,5 +20,4 @@ const Company = (props) => (
     </article>
 );
 
-
 export default Company;

@@ -7,6 +7,7 @@ class Control extends React.Component {
     render() {
         return (
             <aside className='control-panel'>
+                <div className='item-row'>
                 <Button name='Create Company Data' style='btn-primary'
                     onClick={() => 
                         this.props.toggleModal(
@@ -14,6 +15,7 @@ class Control extends React.Component {
                         )
                     }
                 />
+                </div>
             </aside>
         );
     };

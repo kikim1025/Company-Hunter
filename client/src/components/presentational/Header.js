@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Header = () => (
-    <header>
-        <span>Header</span>
+    <header id='header'>
+        <h1>Company Hunter</h1>
     </header>
 );
 

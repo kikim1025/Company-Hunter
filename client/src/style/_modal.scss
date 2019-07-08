@@ -1,0 +1,77 @@
+$modal-height: 83vh;
+$modal-width: 60vw;
+$modal-out__top-height: 5vh;
+$modal-out__bottom-height: 100vh - $modal-out__top-height - $modal-height;
+$modal-out__width: (100vw - $modal-width) / 2;
+
+.modal-box {
+    position: relative;
+}
+
+.modal-out {
+    background-color: rgba(0, 0, 0, 0.74);
+    position: absolute;
+    z-index: 1;
+            
+    &__top {
+        height: $modal-out__top-height;
+        width: 100vw;
+        top: 0;
+        left: 0;
+    }
+
+    &__right {
+        height: $modal-height;
+        width: $modal-out__width;
+        top: $modal-out__top-height;
+        right: 0;
+    }
+
+    &__bottom {
+        height: $modal-out__bottom-height;
+        width: 100vw;
+        bottom: 0;
+        left: 0;
+    }
+
+    &__left {
+        height: $modal-height;
+        width: $modal-out__width;
+        top: $modal-out__top-height;
+        left: 0;
+    }
+}
+
+.modal {
+    background-color: rgba(253, 227, 245, 0.93);
+    height: $modal-height;
+    width: $modal-width;
+    position: absolute;
+    top: $modal-out__top-height;
+    left: $modal-out__width;
+    z-index: 2;
+
+    &.grid--modal {
+        grid-template-rows: 10% 10% 10% 20% 20% 10% 1fr;
+    
+        .modal__alert {
+            margin: auto;
+            width: 70%;
+        }
+        
+        .modal__buttons {
+            position: relative;
+            margin-bottom: 0;
+            width: 100%;
+        }
+    }   
+}
+
+.modal--input__desc {
+    height: 90%;
+    width: 30vw;
+}
+
+
+
+

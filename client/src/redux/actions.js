@@ -57,19 +57,21 @@ export const getData = () => {
 // Send request to create or update company data
 // Check if data to be sent is valid (some other conditions were already checked through UI settings of input elements)
 export const sendData = (name, status, performance, desc, email1, email2, email3, data) => {
+    const performanceInt = parseInt(performance);
     const temp = [email1, email2, email3];
     const contacts = removeEmpty(temp);
-    if (name.length > 0 && performance >= 0 && performance <= 10 && areUniqueEmails(contacts)) {
+    if (name.length > 0 && performanceInt >= 0 && performanceInt <= 10 && areUniqueEmails(contacts)) {
         return (dispatch) => {
             if (!checkDuplicate(name, data)) {
                 return (
-                    $.post('/api/company', { name, status, performance, desc, contacts  })
+                    $.post('/api/company', { name, status, performance: performanceInt, desc, contacts  })
                     .then((res) => {
                         if (res.data.status === 200) {
                             dispatch({ type: GET_DATA, payload: res.data.data });
                         } else if (res.data.status === 409) {
                             dispatch({ type: FAIL_DUP, payload: res.data.data });
                         } else {
+                            console.log(res);
                             dispatch({ type: FAIL });
                         };
                     })
@@ -80,13 +82,14 @@ export const sendData = (name, status, performance, desc, email1, email2, email3
                 );
             } else {
                 return (
-                    $.put('/api/company', { name, status, performance, desc, contacts  })
+                    $.put('/api/company', { name, status, performance: performanceInt, desc, contacts  })
                     .then((res) => {
                         if (res.data.status === 200) {
                             dispatch({ type: GET_DATA, payload: res.data.data });
                         } else if (res.data.status === 404) {
                             dispatch({ type: FAIL_GONE, payload: res.data.data });
                         } else {
+                            console.log(res);
                             dispatch({ type: FAIL });
                         };
                     })
@@ -100,7 +103,7 @@ export const sendData = (name, status, performance, desc, email1, email2, email3
     } else {
         return {
             type: ALERT_MODAL,
-            alert: 'Name, Status, Performance are required, performance should be between 0 and 10 inclusively, and emails should be unique and in correct format.'
+            alert: 'Name, Status, Performance, Description are required, performance should be between 0 and 10 inclusively, and emails should be unique and in correct format.'
         };
     };
 };
