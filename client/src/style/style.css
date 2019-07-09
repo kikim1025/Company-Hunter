@@ -772,15 +772,56 @@ input[type=button].btn-block {
   border-bottom-left-radius: 0;
 }
 
+.grid {
+  display: grid;
+}
+
+.grid--main {
+  grid-template-columns: 15% 1fr;
+  min-height: 90vh;
+}
+.grid--main .control-panel {
+  background-color: aliceblue;
+  border-right: 2px dashed gray;
+  grid-column: 1;
+}
+.grid--main .control-panel .control {
+  margin-top: 50px;
+}
+.grid--main #alert {
+  color: #bd1111;
+  padding: 25px;
+}
+.grid--main .company-panel {
+  grid-column: 2;
+}
+.grid--main .company-panel .grid--company {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding-left: 10px;
+}
+@media screen and (max-width: 1270px) {
+  .grid--main .company-panel .grid--company {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+}
+@media screen and (max-width: 870px) {
+  .grid--main .company-panel .grid--company {
+    grid-template-columns: 1fr;
+    padding-left: 0px;
+  }
+}
+
 .modal-box {
   position: fixed;
+  z-index: 2;
 }
 
 .modal-out {
   height: 100vh;
   width: 100vw;
   position: absolute;
-  z-index: 2;
 }
 .modal-out__top {
   background-color: rgba(0, 0, 0, 0.74);
@@ -822,7 +863,6 @@ input[type=button].btn-block {
   position: absolute;
   top: 5vh;
   left: 20vw;
-  z-index: 2;
 }
 .modal.grid--modal {
   grid-template-rows: 10% 10% 10% 20% 20% 10% 1fr;
@@ -847,45 +887,55 @@ body {
 }
 body #page {
   min-height: 100vh;
-  min-width: 100vw;
 }
 body #page #header {
-  background-color: aliceblue;
-  padding: 20px;
-  height: 10vh;
+  background: linear-gradient(101deg, #050050, #856fd2, #211c72, #459e88);
+  border-bottom: 3px solid #bd7e7e;
+  height: 10%;
 }
-
-.grid--main {
-  grid-template-columns: 18% 70%;
-}
-.grid--main .control-panel {
-  background-color: #f7ede2;
-  grid-column: 1;
-  padding-top: 50px;
-  min-height: 1fr;
-}
-.grid--main #alert {
-  color: #bd1111;
-  padding: 20px;
-}
-.grid--main .company-box {
-  grid-column: 2;
-}
-.grid--main .company-box.grid--company {
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 5px;
+body #page #header #logo {
+  color: aliceblue;
+  margin: 0;
+  padding: 10px;
+  padding-left: 5%;
 }
 
 .company {
+  background-color: #f7f7b0;
+  box-shadow: 5px 10px 7px #333333;
   border: 1px solid black;
+  height: 300px;
+  width: 300px;
   padding: 10px;
+  margin: auto;
+  margin-bottom: 15px;
+  transition: transform 0.25s;
 }
-.company .company__name {
-  font-size: 1.5em;
+.company:nth-child(2n) {
+  background-color: #dcf5f4;
+  position: relative;
+  top: 3px;
+  transform: rotate(2deg);
+}
+.company:nth-child(3n) {
+  position: relative;
+  top: -3px;
+  transform: rotate(-3deg);
+}
+.company:nth-child(5n) {
+  background-color: #d1f7c2;
+  position: relative;
+  top: -3px;
+  transform: rotate(-1.5deg);
+}
+.company:hover {
+  box-shadow: 3px 3px 5px #333333;
+  transform: scale(1.15);
+  z-index: 1;
 }
 
-.grid {
-  display: grid;
+.company__name {
+  font-size: 1.5em;
 }
 
 .item-row {

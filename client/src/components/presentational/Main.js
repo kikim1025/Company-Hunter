@@ -21,12 +21,14 @@ class Main extends React.Component {
                             <ControlContainer />
                             <div>
                                 <AlertContainer />
-                                <section className='company-box grid grid--company'>
-                                    {
-                                        this.props.data.map((c, i) => (
-                                            <Company company={c} key={i} toggleModal={this.props.toggleModal} />
-                                        ))
-                                    }
+                                <section className='company-panel'>
+                                    <div className='grid grid--company'>
+                                        {
+                                            this.props.data.map((c, i) => (
+                                                <Company company={c} key={i} toggleModal={this.props.toggleModal} />
+                                            ))
+                                        }
+                                    </div>
                                 </section>
                             </div>
                         </div>

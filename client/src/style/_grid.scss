@@ -1,0 +1,43 @@
+.grid {
+    display: grid;
+}
+
+.grid--main {
+    grid-template-columns: 15% 1fr;
+    min-height: 90vh;
+
+    .control-panel {
+        background-color: aliceblue;
+        border-right: 2px dashed gray;
+        grid-column: 1;
+
+        .control {
+            margin-top: 50px;
+        }
+    }
+
+    #alert {
+        color: rgb(189, 17, 17);
+        padding: 25px;
+    }
+    
+    .company-panel {
+        grid-column: 2;
+
+        & .grid--company {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 20px;
+            padding-left: 10px;
+
+            @media screen and (max-width: 1270px) {
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 10px;
+            }
+
+            @media screen and (max-width: 870px) {
+                grid-template-columns: 1fr;
+                padding-left: 0px;
+            }
+        }   
+    }
+}

@@ -8,6 +8,7 @@
 @import '../../node_modules/bootstrap/scss/_input-group.scss';
 
 // Custom
+@import 'grid';
 @import 'modal';
 
 body {
@@ -15,53 +16,63 @@ body {
 
     #page {
         min-height: 100vh;
-        min-width: 100vw;
 
         #header {
-            background-color: aliceblue;
-            padding: 20px;
-            height: 10vh;
+            background: linear-gradient(101deg, #050050, rgb(133, 111, 210), #211c72, rgb(69, 158, 136));
+            border-bottom: 3px solid rgb(189, 126, 126);
+            height: 10%;
+
+            #logo {
+                color: aliceblue;
+                margin: 0;
+                padding: 10px;
+                padding-left: 5%;
+            }
         }
-        
-    }
-}
-
-.grid--main {
-    grid-template-columns: 18% 70%;
-
-    .control-panel {
-        background-color: rgb(247, 237, 226);
-        grid-column: 1;
-        padding-top: 50px;
-        min-height: 1fr;
-    }
-
-    #alert {
-        color: rgb(189, 17, 17);
-        padding: 20px;
-    }
-    
-    .company-box {
-        grid-column: 2;
-
-        &.grid--company {
-            grid-template-columns: 1fr 1fr 1fr;
-            padding: 5px;
-        }   
     }
 }
 
 .company {
+    background-color: rgb(247, 247, 176);
+    box-shadow: 5px 10px 7px rgb(51, 51, 51);
     border: 1px solid black;
+    height: 300px;
+    width: 300px;
     padding: 10px;
+    margin: auto;
+    margin-bottom: 15px; 
+    transition: transform .25s;
 
-    .company__name {
-        font-size: 1.5em;
+    &:nth-child(2n) {
+        background-color: rgb(220, 245, 244);
+        position: relative;
+        top:3px;
+        transform: rotate(2deg);
+    }
+
+    &:nth-child(3n) {
+        position: relative;
+        top: -3px;
+        transform: rotate(-3deg);
+    }
+    
+    &:nth-child(5n) {
+        background-color: rgb(209, 247, 194);
+        position: relative;
+        top: -3px;
+        transform: rotate(-1.5deg);
+    }
+    
+    &:hover {
+        box-shadow: 3px 3px 5px rgb(51, 51, 51);
+        transform: scale(1.15);
+        z-index: 1;
     }
 }
 
-.grid {
-    display: grid;
+
+.company__name {
+    font-size: 1.5em;
 }
 
 .item-row {
