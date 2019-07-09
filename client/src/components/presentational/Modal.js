@@ -55,8 +55,8 @@ class Modal extends React.Component {
                             </section>
                             {
                                 this.props.input
-                                ?   <section className='modal'>
-                                        <div className='item-row'>
+                                ?   <section className='modal modal--input'>
+                                        <div className='item-row modal--input__name'>
                                             <div className='input-group'>
                                                 <div className='input-group-prepend'>
                                                     <span className='input-group-text'>Name</span>
@@ -64,7 +64,7 @@ class Modal extends React.Component {
                                                 <input type='text' name='name' maxLength='30' placeholder='Company Name' defaultValue={this.props.name} onChange={this.getInput}/>
                                             </div>
                                         </div>
-                                        <div className='item-row'>
+                                        <div className='item-row modal--input__status'>
                                             <div className='input-group'>
                                                 <div className='input-group-prepend'>
                                                     <label className='input-group-text'>Status</label>
@@ -77,7 +77,7 @@ class Modal extends React.Component {
                                                 </select>
                                             </div>    
                                         </div>
-                                        <div className='item-row'>
+                                        <div className='item-row modal--input__performance'>
                                             <div className='input-group'>
                                                 <div className='input-group-prepend'>
                                                     <span className='input-group-text'>Performance</span>
@@ -85,18 +85,18 @@ class Modal extends React.Component {
                                                 <input type='number' name='performance' min='0' max='10' placeholder='Score' defaultValue={this.props.performance} onChange={this.getInput} />
                                             </div>
                                         </div>
-                                        <div className='item-row'>
+                                        <div className='item-row modal--input__desc'>
                                             <span className='input-group-text'>Company Description</span>                                              
-                                            <textarea className='form-control' name='desc' maxLength='200' placeholder='Company Description' defaultValue={this.props.desc} onChange={this.getInput} />
+                                            <textarea className='desc form-control' name='desc' maxLength='200' placeholder='Company Description' defaultValue={this.props.desc} onChange={this.getInput} />
                                         </div>
-                                        <div className='item-row'>
+                                        <div className='item-row modal--input__contacts'>
                                             <span className='input-group-text'>Contacts Emails</span>    
-                                            <input type='text' name='email1' maxLength='30' placeholder='Email 1' defaultValue={this.props.contacts[0]} onChange={this.getInput} />
-                                            <input type='text' name='email2' maxLength='30' placeholder='Email 2' defaultValue={this.props.contacts[1]} onChange={this.getInput} />
-                                            <input type='text' name='email3' maxLength='30' placeholder='Email 3' defaultValue={this.props.contacts[2]} onChange={this.getInput} />
+                                            <input className='contact' type='text' name='email1' maxLength='30' placeholder='Email 1' defaultValue={this.props.contacts[0]} onChange={this.getInput} />
+                                            <input className='contact' type='text' name='email2' maxLength='30' placeholder='Email 2' defaultValue={this.props.contacts[1]} onChange={this.getInput} />
+                                            <input className='contact' type='text' name='email3' maxLength='30' placeholder='Email 3' defaultValue={this.props.contacts[2]} onChange={this.getInput} />
                                         </div>
-                                        <div className='item-row alert'>Name, Status, Performance, Description are required, performance should be between 0 and 10 inclusively, and emails, if present, should be unique and in correct format.</div>
-                                        <div className='item-row'>
+                                        <div className='item-row alert modal--input__alert'>Name, Status, Performance, Description are required, performance should be between 0 and 10 inclusively, and emails, if present, should be unique and in correct format.</div>
+                                        <div className='item-row modal--input__button'>
                                             <Button name='Send Data' style='btn-success' onClick={this.sendData} />
                                         </div>
                                     </section>
@@ -106,13 +106,11 @@ class Modal extends React.Component {
                                         <div className='item-row modal__performance'>{this.props.performance}/10</div>
                                         <p className='item-row modal__desc'>{this.props.desc}</p>
                                         <div className='item-row modal__contacts'>
-                                            <div className='email-list'>
-                                                {
-                                                    this.props.contacts.map((c, i) => (
-                                                        <div key={i}>{c}</div>
-                                                    ))
-                                                }
-                                            </div>
+                                            {
+                                                this.props.contacts.map((c, i) => (
+                                                    <div key={i}>{c}</div>
+                                                ))
+                                            }
                                         </div>
                                         <div className='item-row'>
                                             <Button name='Delete' style='btn-danger btn--left' onClick={() => this.props.deleteCompany(this.props.name)}/>
