@@ -48,10 +48,10 @@ class Modal extends React.Component {
                     ?   ''
                     :   <article className='modal-box'>
                             <section className='modal-out' onClick={this.closeModal}>
-                                <div className='modal-out__top'></div>
-                                <div className='modal-out__right'></div>
-                                <div className='modal-out__bottom'></div>
-                                <div className='modal-out__left'></div>
+                                <div className='modal-out modal-out__top'></div>
+                                <div className='modal-out modal-out__right'></div>
+                                <div className='modal-out modal-out__bottom'></div>
+                                <div className='modal-out modal-out__left'></div>
                             </section>
                             {
                                 this.props.input
@@ -94,6 +94,7 @@ class Modal extends React.Component {
                                             <input type='text' name='email2' maxLength='30' placeholder='Email 2' defaultValue={this.props.contacts[1]} onChange={this.getInput} />
                                             <input type='text' name='email3' maxLength='30' placeholder='Email 3' defaultValue={this.props.contacts[2]} onChange={this.getInput} />
                                         </div>
+                                        <div className='modal__alert item-row'>Name, Status, Performance, Description are required, performance should be between 0 and 10 inclusively, and emails, if present, should be unique and in correct format.</div>
                                         <div className='modal__buttons item-row'>
                                             <Button name='Send Data' style='btn-success' onClick={this.sendData} />
                                         </div>
@@ -111,7 +112,6 @@ class Modal extends React.Component {
                                                 ))
                                             }
                                         </div>
-                                        <div className='modal__alert item-row'>Name, Status, Performance, Description are required, performance should be between 0 and 10 inclusively, and emails, if present, should be unique and in correct format.</div>
                                         <div className='modal__buttons item-row'>
                                             <div className='left'><Button name='Delete' style='btn-danger' onClick={() => this.props.deleteCompany(this.props.name)}/></div>
                                             <div className='right'><Button name='Edit' style='btn-primary'onClick={this.getUpdateScreen}/></div>
