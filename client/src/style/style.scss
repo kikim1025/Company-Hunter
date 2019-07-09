@@ -20,6 +20,7 @@ body {
         #header {
             background-color: aliceblue;
             padding: 20px;
+            height: 10vh;
         }
         
     }
@@ -32,6 +33,7 @@ body {
         background-color: rgb(247, 237, 226);
         grid-column: 1;
         padding-top: 50px;
+        min-height: 1fr;
     }
 
     #alert {

@@ -773,33 +773,42 @@ input[type=button].btn-block {
 }
 
 .modal-box {
-  position: relative;
+  position: fixed;
 }
 
 .modal-out {
-  background-color: rgba(0, 0, 0, 0.74);
+  height: 100vh;
+  width: 100vw;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
 }
 .modal-out__top {
+  background-color: rgba(0, 0, 0, 0.74);
+  position: absolute;
   height: 5vh;
   width: 100vw;
   top: 0;
   left: 0;
 }
 .modal-out__right {
+  background-color: rgba(0, 0, 0, 0.74);
+  position: absolute;
   height: 83vh;
   width: 20vw;
   top: 5vh;
   right: 0;
 }
 .modal-out__bottom {
+  background-color: rgba(0, 0, 0, 0.74);
+  position: absolute;
   height: 12vh;
   width: 100vw;
   bottom: 0;
   left: 0;
 }
 .modal-out__left {
+  background-color: rgba(0, 0, 0, 0.74);
+  position: absolute;
   height: 83vh;
   width: 20vw;
   top: 5vh;
@@ -843,6 +852,7 @@ body #page {
 body #page #header {
   background-color: aliceblue;
   padding: 20px;
+  height: 10vh;
 }
 
 .grid--main {
@@ -852,6 +862,7 @@ body #page #header {
   background-color: #f7ede2;
   grid-column: 1;
   padding-top: 50px;
+  min-height: 1fr;
 }
 .grid--main #alert {
   color: #bd1111;
