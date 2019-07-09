@@ -113,8 +113,8 @@ class Modal extends React.Component {
                                             }
                                         </div>
                                         <div className='modal__buttons item-row'>
-                                            <div className='left'><Button name='Delete' style='btn-danger' onClick={() => this.props.deleteCompany(this.props.name)}/></div>
-                                            <div className='right'><Button name='Edit' style='btn-primary'onClick={this.getUpdateScreen}/></div>
+                                            <div className='left'><Button name='Delete' style='btn-danger btn--left' onClick={() => this.props.deleteCompany(this.props.name)}/></div>
+                                            <div className='right'><Button name='Edit' style='btn-primary btn--right'onClick={this.getUpdateScreen}/></div>
                                         </div>
                                     </section>
                             }

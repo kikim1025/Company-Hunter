@@ -882,6 +882,82 @@ input[type=button].btn-block {
   width: 30vw;
 }
 
+.company {
+  background-color: #f7f7b0;
+  box-shadow: 5px 10px 7px #333333;
+  border: 1px solid black;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 15px;
+  transition: transform 0.25s;
+}
+.company:nth-child(2n) {
+  background-color: #dcf5f4;
+  top: 3px;
+  transform: rotate(2deg);
+}
+.company:nth-child(3n) {
+  top: -3px;
+  transform: rotate(-3deg);
+}
+.company:nth-child(5n) {
+  background-color: #d1f7c2;
+  top: -3px;
+  transform: rotate(-1.5deg);
+}
+.company:hover {
+  box-shadow: 3px 3px 5px #333333;
+  transform: scale(1.15);
+  z-index: 1;
+}
+.company .item-row {
+  padding: 13px 0 13px 0;
+}
+.company .company__name {
+  font-size: 2em;
+  padding: 15px;
+  word-wrap: break-word;
+}
+.company .company__performance {
+  font-size: 1.2em;
+}
+.company .company__status {
+  font-size: 1.1em;
+}
+.company .company__status .status {
+  display: inline-block;
+}
+.company .company__buttons {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.company .company__buttons .btn {
+  background-color: #f398a7;
+  border: 0px;
+}
+
+.status {
+  background-color: white;
+  border: 1px solid rgba(243, 186, 195, 0.712);
+  border-radius: 30%;
+  padding: 7px 7px;
+}
+.status--Researching {
+  color: black;
+}
+.status--Pending {
+  color: blue;
+}
+.status--Approved {
+  color: green;
+}
+.status--Declined {
+  color: red;
+}
+
 body {
   margin: 0;
 }
@@ -900,62 +976,26 @@ body #page #header #logo {
   padding-left: 5%;
 }
 
-.company {
-  background-color: #f7f7b0;
-  box-shadow: 5px 10px 7px #333333;
-  border: 1px solid black;
-  height: 300px;
-  width: 300px;
-  padding: 10px;
-  margin: auto;
-  margin-bottom: 15px;
-  transition: transform 0.25s;
-}
-.company:nth-child(2n) {
-  background-color: #dcf5f4;
-  position: relative;
-  top: 3px;
-  transform: rotate(2deg);
-}
-.company:nth-child(3n) {
-  position: relative;
-  top: -3px;
-  transform: rotate(-3deg);
-}
-.company:nth-child(5n) {
-  background-color: #d1f7c2;
-  position: relative;
-  top: -3px;
-  transform: rotate(-1.5deg);
-}
-.company:hover {
-  box-shadow: 3px 3px 5px #333333;
-  transform: scale(1.15);
-  z-index: 1;
-}
-
-.company__name {
-  font-size: 1.5em;
-}
-
 .item-row {
   margin: 5px auto 5px auto;
   overflow: auto;
   text-align: center;
 }
 
-.left {
+.btn--left {
   position: absolute;
   left: 20%;
   bottom: 20px;
-  z-index: 3;
 }
 
-.right {
+.btn--right {
   position: absolute;
   right: 20%;
   bottom: 20px;
-  z-index: 3;
+}
+
+.btn--center {
+  margin: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
