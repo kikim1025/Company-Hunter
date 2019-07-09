@@ -8,7 +8,7 @@ const Company = (props) => (
         <div className='item-row'><div className='company__status'>Status: <div className={'status status--' + props.company.status}><strong>{props.company.status}</strong></div></div></div>
         <div className='item-row'>
             <div className='company__buttons'>
-                <Button name='Details' style='btn-sm btn-info btn--center'
+                <Button name='Details' style='btn-sm btn-info'
                     onClick={() => 
                         props.toggleModal(
                             true, false, props.company.name, 

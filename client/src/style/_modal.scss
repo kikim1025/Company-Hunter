@@ -53,34 +53,61 @@ $modal-out__width: (100vw - $modal-width) / 2;
 }
 
 .modal {
-    background-color: rgba(253, 227, 245, 0.93);
+    background-color: rgba(253, 227, 245, 0.95);
     height: $modal-height;
     width: $modal-width;
+    overflow: auto;
     position: absolute;
     top: $modal-out__top-height;
     left: $modal-out__width;
 
-    &.grid--modal {
-        grid-template-rows: 10% 10% 10% 20% 20% 10% 1fr;
-    
-        .modal__alert {
+    .item-row {
+        margin-bottom: 20px;
+    }
+
+    &__name {
+        font-size: 2.5rem;
+        border-bottom: 1px solid gray;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        word-wrap: break-word;
+    }
+
+    &__status {
+        font-size: 1.4rem;
+        width: 8rem;
+    }
+
+    &__performance {
+        font-size: 1.5rem;
+    }
+
+    &__desc {
+        font-size: 1.3rem;
+        padding: 0 20%;
+        padding-bottom: 20px;
+        word-wrap: break-word;
+    }
+
+    &__contacts {
+        font-size: 1.2rem;
+        padding: 0 20%;
+
+        .email-list {
             margin: auto;
-            width: 70%;
         }
-        
-        .modal__buttons {
-            position: relative;
-            margin-bottom: 0;
-            width: 100%;
-        }
-    }   
+    }
+
+    .btn--left {
+        position: fixed;
+        left: calc(#{$modal-out__width} + 16px);
+        bottom: $modal-out__bottom-height;
+    }
+    
+    .btn--right {
+        position: fixed;
+        right: $modal-out__width;
+        bottom: $modal-out__bottom-height;
+        z-index: 5;
+    }
 }
-
-.modal--input__desc {
-    height: 90%;
-    width: 30vw;
-}
-
-
-
-

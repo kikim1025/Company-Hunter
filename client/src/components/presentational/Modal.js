@@ -55,8 +55,8 @@ class Modal extends React.Component {
                             </section>
                             {
                                 this.props.input
-                                ?   <section className='modal grid grid--modal'>
-                                        <div className='modal__name item-row'>
+                                ?   <section className='modal'>
+                                        <div className='item-row'>
                                             <div className='input-group'>
                                                 <div className='input-group-prepend'>
                                                     <span className='input-group-text'>Name</span>
@@ -64,7 +64,7 @@ class Modal extends React.Component {
                                                 <input type='text' name='name' maxLength='30' placeholder='Company Name' defaultValue={this.props.name} onChange={this.getInput}/>
                                             </div>
                                         </div>
-                                        <div className='modal__status item-row'>
+                                        <div className='item-row'>
                                             <div className='input-group'>
                                                 <div className='input-group-prepend'>
                                                     <label className='input-group-text'>Status</label>
@@ -77,7 +77,7 @@ class Modal extends React.Component {
                                                 </select>
                                             </div>    
                                         </div>
-                                        <div className='modal__performance item-row'>
+                                        <div className='item-row'>
                                             <div className='input-group'>
                                                 <div className='input-group-prepend'>
                                                     <span className='input-group-text'>Performance</span>
@@ -85,36 +85,38 @@ class Modal extends React.Component {
                                                 <input type='number' name='performance' min='0' max='10' placeholder='Score' defaultValue={this.props.performance} onChange={this.getInput} />
                                             </div>
                                         </div>
-                                        <div className='modal__desc item-row'>                                            
-                                            <textarea className='modal--input__desc form-control' name='desc' maxLength='200' placeholder='Company Description' defaultValue={this.props.desc} onChange={this.getInput} />
+                                        <div className='item-row'>
+                                            <span className='input-group-text'>Company Description</span>                                              
+                                            <textarea className='form-control' name='desc' maxLength='200' placeholder='Company Description' defaultValue={this.props.desc} onChange={this.getInput} />
                                         </div>
-                                        <div className='modal__contacts item-row'>
+                                        <div className='item-row'>
                                             <span className='input-group-text'>Contacts Emails</span>    
                                             <input type='text' name='email1' maxLength='30' placeholder='Email 1' defaultValue={this.props.contacts[0]} onChange={this.getInput} />
                                             <input type='text' name='email2' maxLength='30' placeholder='Email 2' defaultValue={this.props.contacts[1]} onChange={this.getInput} />
                                             <input type='text' name='email3' maxLength='30' placeholder='Email 3' defaultValue={this.props.contacts[2]} onChange={this.getInput} />
                                         </div>
-                                        <div className='modal__alert item-row'>Name, Status, Performance, Description are required, performance should be between 0 and 10 inclusively, and emails, if present, should be unique and in correct format.</div>
-                                        <div className='modal__buttons item-row'>
+                                        <div className='item-row alert'>Name, Status, Performance, Description are required, performance should be between 0 and 10 inclusively, and emails, if present, should be unique and in correct format.</div>
+                                        <div className='item-row'>
                                             <Button name='Send Data' style='btn-success' onClick={this.sendData} />
                                         </div>
                                     </section>
-                                :   <section className='modal grid grid--modal'>
-                                        <h2 className='modal__name item-row'>{this.props.name}</h2>
-                                        <div className='modal__status item-row'>{this.props.status}</div>
-                                        <div className='modal__performance item-row'>{this.props.performance}/10</div>
-                                        <p className='modal__desc item-row'>{this.props.desc}</p>
-                                        <div className='modal__contacts item-row'>
-                                            <div>Contacts</div>
-                                            {
-                                                this.props.contacts.map((c, i) => (
-                                                    <div className='email' key={i}>{c}</div>
-                                                ))
-                                            }
+                                :   <section className='modal'>
+                                        <div className='item-row modal__name'>{this.props.name}</div>
+                                        <div className='item-row modal__status'><div className={'status status--' + this.props.status}>{this.props.status}</div></div>
+                                        <div className='item-row modal__performance'>{this.props.performance}/10</div>
+                                        <p className='item-row modal__desc'>{this.props.desc}</p>
+                                        <div className='item-row modal__contacts'>
+                                            <div className='email-list'>
+                                                {
+                                                    this.props.contacts.map((c, i) => (
+                                                        <div key={i}>{c}</div>
+                                                    ))
+                                                }
+                                            </div>
                                         </div>
-                                        <div className='modal__buttons item-row'>
-                                            <div className='left'><Button name='Delete' style='btn-danger btn--left' onClick={() => this.props.deleteCompany(this.props.name)}/></div>
-                                            <div className='right'><Button name='Edit' style='btn-primary btn--right'onClick={this.getUpdateScreen}/></div>
+                                        <div className='item-row'>
+                                            <Button name='Delete' style='btn-danger btn--left' onClick={() => this.props.deleteCompany(this.props.name)}/>
+                                            <Button name='Edit' style='btn-primary btn--right' onClick={this.getUpdateScreen}/>
                                         </div>
                                     </section>
                             }

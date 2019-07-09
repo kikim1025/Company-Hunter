@@ -37,17 +37,17 @@
     }
 
     .company__name {
-        font-size: 2em;
+        font-size: 30px;
         padding: 15px;
         word-wrap: break-word;
     }
 
     .company__performance {
-        font-size: 1.2em;
+        font-size: 20px;
     }
 
     .company__status {
-        font-size: 1.1em;
+        font-size: 20px;
 
         .status {
             display: inline-block;  
@@ -73,15 +73,15 @@
     padding: 7px 7px;
 
     &--Researching {
-        color: black;
+        color: purple;
     }
 
     &--Pending {
-        color: blue;
+        color: green;
     }
 
     &--Approved {
-        color: green;
+        color: blue;
     }
 
     &--Declined {
