@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/kikim1025/Company-Hunter#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "mongoose": "^5.6.2"
   }
 }
